@@ -9,7 +9,7 @@ import {
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-//cors
+
 
 function Login() {
   const toast = useToast()
