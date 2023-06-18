@@ -1,5 +1,5 @@
 import { Button, Input } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {
   FormControl,
   FormLabel,
@@ -8,10 +8,15 @@ import {
 } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { AuthContext } from '../Context/AuthContextProvider'
 
 
 
 function Login() {
+
+const {Authstate, setAuthstate ,loginUser,logoutUser} = useContext(AuthContext)
+console.log(Authstate)
+
   const toast = useToast()
 
   const [email, setEmail] = useState("")
@@ -22,7 +27,7 @@ function Login() {
   const handleSubmit = async () => {
 
     const data = { email, password }
-    console.log(data)
+    //console.log(data)
 
 
 
