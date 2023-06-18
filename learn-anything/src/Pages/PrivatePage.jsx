@@ -2,15 +2,17 @@ import React, { useContext } from 'react'
 import { AuthContext } from '../Context/AuthContextProvider'
 import { Navigate } from 'react-router-dom'
 
-function PrivatePage({children}) {
- 
-    const {Authstate}=useContext(AuthContext)
+function PrivatePage({ children }) {
+
+    const { authState, loginUser, logoutUser } = useContext(AuthContext)
+
+    console.log(authState);
 
 
-    if(!Authstate.isAuth){
-       return <Navigate to="/login"  />
+    if (!authState.isAuth) {
+        return <Navigate to="/login" />
     }
-    else{
+    else {
         return children
     }
 }

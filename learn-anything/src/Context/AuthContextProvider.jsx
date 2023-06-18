@@ -10,26 +10,26 @@ function AuthContextProvider({ children }) {
     token: null
   })
 
-  
-  const loginUser=()=>{
-   return setAuthstate({
-      isAuth:true,
-      token:localStorage.getItem('token')
+
+  const loginUser = (token) => {
+    return setAuthstate({
+      ...Authstate,
+      isAuth: true,
+      token
     })
   }
 
-  const logoutUser=()=>{
-   return setAuthstate({
-      isAuth:false,
-      token:null
+  const logoutUser = () => {
+    
+    return setAuthstate({
+      ...Authstate,
+      isAuth: false,
+      token: null,
     })
   }
-
-
-
 
   return (
-    <AuthContext.Provider value={{ Authstate, setAuthstate ,loginUser,logoutUser}}>
+    <AuthContext.Provider value={{ authState: Authstate, loginUser, logoutUser }}>
       {children}
     </AuthContext.Provider>
   )

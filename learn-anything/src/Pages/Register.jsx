@@ -1,17 +1,27 @@
-import { Button, Input } from '@chakra-ui/react'
+import { Button, Input, Modal, useDisclosure } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import {
   FormControl,
   FormLabel,
-  useToast
+  useToast,
+  ModalOverlay,
+  ModalContent,
+ 
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Footer from '../Components/Footer'
+import Slider from '../Components/Slider'
 
 
 function Register() {
 
   const toast = useToast()
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const finalRef = React.useRef(null)
   
   const [data, setData] = useState({
     name: "",
@@ -61,8 +71,24 @@ function Register() {
     setData({ ...data, [event.target.name]: event.target.value })
   }
   return (
-    <div style={{ width: "50%", margin: "auto" }}>
-      <form >
+    <div style={{ width: "100%", margin: "auto" }}>
+
+
+
+
+<Button mt={4} onClick={onOpen}>
+        click here to Register
+    </Button>
+      <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose} >
+        <ModalOverlay />
+        <ModalContent>
+
+
+
+          
+          <ModalCloseButton />
+          <ModalBody>
+          <form >
         <FormControl>
 
           <FormLabel>Name</FormLabel>
@@ -94,6 +120,40 @@ function Register() {
 
         </FormControl>
       </form>
+
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme='blue' mr={3} onClick={onClose}>
+              Close
+            </Button>
+           
+          </ModalFooter>
+
+
+
+        </ModalContent>
+      </Modal>
+
+      <Slider slides={[{
+        img: "https://img.freepik.com/premium-photo/online-webinars-online-education-elearning-idea_27634-912.jpg",
+      },
+      {
+        img: "https://gs.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/advantage%20online%20learning.jpeg",
+      },
+      {
+        img: "https://www.ice.cam.ac.uk/sites/www.ice.cam.ac.uk/files/styles/leading/public/istock-1220226086.jpg?itok=ihnlFN0h",
+      },
+      {
+        img: "https://e1.pxfuel.com/desktop-wallpaper/343/502/desktop-wallpaper-online-education-application-learning-worldwide-on-computer-mobile-website-background-social-distance-concept-the-classroom-training-course-library-vector-illustration-flat-1937754-vector-art-at-vecteezy.jpg",
+      },
+      {
+        img: "https://static.vecteezy.com/system/resources/previews/001/937/601/original/online-education-application-learning-worldwide-on-computer-mobile-website-background-social-distance-concept-the-classroom-training-course-library-illustration-flat-vector.jpg",
+      },]} />
+
+
+    <Footer  />
+
 
     </div>
   )

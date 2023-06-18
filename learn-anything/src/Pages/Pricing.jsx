@@ -7,7 +7,7 @@ import Footer from '../Components/Footer'
 function Pricing() {
   return (
     <div>
-        <Heading>WelCome to Pricing Page</Heading>
+        <Heading style={{color:"blue", size:"sm"}} >Simple and straight Farward Pricing</Heading>
         <PriceCard   />
         <Happytohelp  />
         <Footer  />

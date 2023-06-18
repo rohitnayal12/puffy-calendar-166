@@ -5,11 +5,18 @@ import Footer from '../Components/Footer'
 import Card from '../Components/Card';
 import Whywithuscard from '../Components/Whywithuscard';
 import Faculty from '../Components/Faculty';
+import images from "../Components/image/Screenshot (961).png"
+
+
+
+
 function Home() {
   return (
     <div>
         
-        
+        <div>
+        <img src={images} alt="" width="100%" />
+        </div>
 
         
         <Grid templateColumns='repeat(2, 1fr)' gap={6} style={{marginTop:"10px"}}>

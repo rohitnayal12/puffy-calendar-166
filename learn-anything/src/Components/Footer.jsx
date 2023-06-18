@@ -1,4 +1,4 @@
-import { Box, Divider, Flex,  HStack, Icon,  Stack, Text, VStack } from '@chakra-ui/react'
+import { Box, Divider, Flex,  HStack, Heading, Icon,  Stack, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import { AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterCircle, AiFillApple } from "react-icons/ai";
 import { Link } from 'react-router-dom';
@@ -42,8 +42,8 @@ function Footer() {
                         }}
                     >
                         <Flex justify="start" direction="column">
-                            <h1>Get in touch</h1>
-                            <p>stay connected with us</p>
+                            <Heading style={{color:"blue", size:"sm"}}>Get in touch</Heading>
+                            <Text style={{color:"black", size:"xsm"}}>stay connected with us</Text>
                             <Link><AiFillFacebook size="40px" /></Link>
                             <Link><AiFillInstagram size="40px" /></Link>
                             <Link><AiFillLinkedin size="40px" /></Link>
@@ -51,13 +51,13 @@ function Footer() {
                         </Flex>
                         <Flex justify="start" direction="column">
 
-                            <Link>Abot us</Link>
+                            <Link style={{color:"green"}}>About us</Link>
                             <br />
-                            <Link>Our Team</Link>
+                            <Link style={{color:"green"}}>Our Team</Link>
                             <br />
-                            <Link>FAQS</Link>
+                            <Link style={{color:"green"}}>FAQS</Link>
                             <br />
-                            <Link>Terms Of Service</Link>
+                            <Link style={{color:"green"}}>Terms Of Service</Link>
                         </Flex>
                     </HStack>
                     <HStack
@@ -78,15 +78,15 @@ function Footer() {
                         }}
                     >
                         <Flex justify="start" direction="column">
-                            <h1>Product</h1>
-                            <Link>Terms Of User</Link>
+                            <Heading style={{color:"blue", size:"sm"}}>Product</Heading>
+                            <Link style={{color:"red"}}>Terms Of User</Link>
                             <br />
-                            <Link>Pribacy Policy</Link>
+                            <Link style={{color:"red"}}>Pribacy Policy</Link>
                             <br />
-                            <Link>Login</Link>
+                            <Link style={{color:"red"}}>Login</Link>
                         </Flex>
                         <Flex justify="start" direction="column">
-                            <h1>Download App</h1>
+                            <Heading style={{color:"brown", size:"sm"}}>Download App</Heading>
                             <Box style={{ width: "50%", margin: "auto" }}>
                                 <Link><AiFillApple size="40px" /></Link>
                                 <Link><FaGooglePlay size="40px" /></Link>
